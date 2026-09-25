@@ -1,0 +1,46 @@
+{
+  "weights": [
+    -0.26605953350750916,
+    0.15248586990484245,
+    1.3793640833664422,
+    11.95389155459121,
+    -18.83775607559551,
+    7.8046541617677825,
+    13.322715947071087,
+    1.2684610496161803,
+    11.109156996693695,
+    9.103532915051044,
+    29.491638419681443,
+    2.3962568375695557,
+    7.082063994112558,
+    -0.24570089833252923,
+    15.414638391178434,
+    2.4537038024051183,
+    10.8056180019689
+  ],
+  "bias": 18.925924749994284,
+  "feature_names": [
+    "degree_program",
+    "specialization",
+    "university_tier",
+    "cgpa",
+    "backlogs",
+    "num_skills",
+    "skill_relevance_score",
+    "hackathons_participated",
+    "hackathons_won",
+    "certifications_count",
+    "internships_count",
+    "projects_count",
+    "communication_score",
+    "extracurricular_score",
+    "university_placement_rate",
+    "university_avg_package_lpa",
+    "resume_score"
+  ],
+  "metrics": {
+    "r2": 0.7051,
+    "rmse": 6.1029,
+    "mae": 4.8698
+  }
+}

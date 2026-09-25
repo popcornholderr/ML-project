@@ -1,0 +1,88 @@
+{
+  "dataset_size": 6000,
+  "degrees": [
+    "B.Tech",
+    "B.Sc",
+    "BCA",
+    "BBA",
+    "M.Tech",
+    "MCA",
+    "MBA"
+  ],
+  "specializations": [
+    "Computer Science",
+    "Information Technology",
+    "Electronics",
+    "Mechanical",
+    "Civil",
+    "Data Science",
+    "Finance",
+    "Marketing",
+    "HR"
+  ],
+  "university_tiers": [
+    "Tier 1",
+    "Tier 2",
+    "Tier 3"
+  ],
+  "tier_base_rates": {
+    "Tier 1": 0.9,
+    "Tier 2": 0.68,
+    "Tier 3": 0.48
+  },
+  "tier_base_packages": {
+    "Tier 1": 14.0,
+    "Tier 2": 7.5,
+    "Tier 3": 4.0
+  },
+  "feature_columns": [
+    "degree_program",
+    "specialization",
+    "university_tier",
+    "cgpa",
+    "backlogs",
+    "num_skills",
+    "skill_relevance_score",
+    "hackathons_participated",
+    "hackathons_won",
+    "certifications_count",
+    "internships_count",
+    "projects_count",
+    "communication_score",
+    "extracurricular_score",
+    "university_placement_rate",
+    "university_avg_package_lpa",
+    "resume_score"
+  ],
+  "categorical_columns": [
+    "degree_program",
+    "specialization",
+    "university_tier"
+  ],
+  "svr_metrics": {
+    "r2": 0.6407,
+    "rmse": 6.7364,
+    "mae": 5.3583,
+    "params": {
+      "C": 100,
+      "gamma": "scale",
+      "epsilon": 0.5,
+      "kernel": "rbf"
+    }
+  },
+  "stats": {
+    "avg_cgpa": 7.22,
+    "avg_probability": 61.5,
+    "overall_placement_rate": 85.7,
+    "tier_distribution": {
+      "Tier 2": 0.45,
+      "Tier 3": 0.351,
+      "Tier 1": 0.199
+    },
+    "tier_avg_probability": {
+      "Tier 1": 66.4,
+      "Tier 2": 61.9,
+      "Tier 3": 58.1
+    }
+  }
+}
