@@ -1,0 +1,73 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Rounded Rectangle Subtle Top-Light Gradient -->
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </linearGradient>
+
+    <!-- Hairline Specular Bevel on Box -->
+    <linearGradient id="boxBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.32)"/>
+      <stop offset="35%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.5)"/>
+    </linearGradient>
+
+    <!-- Torus Ambient Floor Shadow -->
+    <filter id="ringFloorShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Torus Main 3D Volume Gradient (Top-Left Key Light to Bottom-Right Shadow) -->
+    <linearGradient id="torusVol" x1="0.1" y1="0.1" x2="0.9" y2="0.9">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#f4f4f8"/>
+      <stop offset="55%" stop-color="#cfcfd8"/>
+      <stop offset="85%" stop-color="#9ea0ac"/>
+      <stop offset="100%" stop-color="#80828e"/>
+    </linearGradient>
+
+    <!-- Inner Hole Curvature Gradient (Opposite Lighting: Bottom-Right catches bounce light!) -->
+    <radialGradient id="innerWallGleam" cx="68%" cy="68%" r="48%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#e2e2ec" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#90909c" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Specular Crest Gleam (Sharp Top-Left Highlight) -->
+    <linearGradient id="crestGleam" x1="0.1" y1="0.1" x2="0.4" y2="0.4">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Filled Black Rounded Rectangle -->
+  <rect x="1" y="1" width="42" height="42" rx="11" fill="url(#boxGrad)" stroke="url(#boxBorder)" stroke-width="1.2"/>
+
+  <!-- Bold White 3D Ring Group with Floor Shadow -->
+  <g filter="url(#ringFloorShadow)">
+    <!-- Outer Bold Ring Torus Body -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="
+      M 22 7.5
+      A 14.5 14.5 0 1 0 22 36.5
+      A 14.5 14.5 0 1 0 22 7.5
+      Z
+      M 22 14.5
+      A 7.5 7.5 0 1 1 22 29.5
+      A 7.5 7.5 0 1 1 22 14.5
+      Z"
+      fill="url(#torusVol)"/>
+
+    <!-- Inner Wall Bounce Highlight (Gives Depth to the 3D Hole) -->
+    <path fill-rule="evenodd" clip-rule="evenodd" d="
+      M 22 14.5
+      A 7.5 7.5 0 1 1 22 29.5
+      A 7.5 7.5 0 1 1 22 14.5
+      Z"
+      fill="url(#innerWallGleam)"/>
+
+    <!-- Top-Left Crest Specular Arc -->
+    <path d="M 12 18 A 11 11 0 0 1 20 10.5" stroke="url(#crestGleam)" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+</svg>

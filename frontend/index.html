@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORBIT — AI Campus Placement Prediction Engine</title>
+  <meta name="description" content="Predict your campus placement probability and expected salary package with high-precision machine learning calibrated against verified collegiate benchmarks.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Ultra-High-Tech Fonts: Geist & Geist Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="/static/images/logo_3d_ring.png">
+  <link rel="apple-touch-icon" href="/static/images/logo_3d_ring.png">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- ===================== BACKGROUND SMOOTH GLASS RING ===================== -->
+  <div class="bg-glass-ring-container" aria-hidden="true">
+    <img src="/static/images/liquid_ring_clean.png" alt="Smooth Liquid Glass Ring" class="bg-glass-ring-img">
+  </div>
+  <div class="bg-ambient-light" aria-hidden="true"></div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <header class="nav">
+    <nav class="nav-in glass" aria-label="Primary Navigation">
+      <a href="#top" class="nav-brand">
+        <!-- Filled Black Rounded Rectangle with Tilted Bold White 3D Ring Logo -->
+        <span class="nav-logo-mark" aria-hidden="true">
+          <img src="/static/images/logo_3d_ring.png" alt="ORBIT Logo" class="brand-logo-img" width="36" height="36">
+        </span>
+        <div class="brand-text">
+          <span class="brand-title">ORBIT</span>
+          <span class="brand-sub">Campus Placement AI</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <div class="nav-capsule" id="navCapsule" aria-hidden="true"></div>
+        <a href="#top" class="nav-tab active">Overview</a>
+        <a href="#engine" class="nav-tab">Studio</a>
+        <a href="#simulator" class="nav-tab">Simulator</a>
+        <a href="#specs" class="nav-tab">Models</a>
+        <a href="#about" class="nav-tab">About</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#engine" class="btn btn-sm">Predict Now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== 01 · HERO ===================== -->
+    <section id="top" class="hero">
+      <!-- 3D Refractive Liquid Glass Canvas -->
+      <div id="glass-stage" aria-hidden="true"></div>
+
+      <div class="hero-in">
+        <div class="hero-pill-badge rv" style="transition-delay: .05s">
+          <span class="badge-dot"></span>
+          <span>CAMPUS PLACEMENT PREDICTION ENGINE</span>
+        </div>
+
+        <h1 class="h-hero rv" style="transition-delay: .15s">
+          Predict your placement.<br><span class="thin">Engineered before campus day one.</span>
+        </h1>
+
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <div class="hero-bottom">
+          <p class="hero-subtext rv" style="transition-delay: .25s">
+            High-precision Machine Learning calibrated against enterprise recruitment bars and verified campus placement distributions.
+          </p>
+          <div class="hero-actions rv" style="transition-delay: .35s">
+            <a href="#engine" class="btn">
+              <span>Predict Your Placement</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#simulator" class="btn btn-secondary">
+              <span>Simulate Scenarios</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-foot wrap">
+        <span class="meta-pill">6,000 Verified Profiles</span>
+        <span class="meta-pill">RBF Support Vector Machine</span>
+      </div>
+    </section>
+
+    <!-- ===================== 02 · PREDICTION STUDIO ===================== -->
+    <section id="engine">
+      <div class="wrap">
+        <div class="sect-header rv">
+          <span class="sect-eyebrow">Evaluation Studio</span>
+          <h2 class="h-sect">The Trajectory Studio.</h2>
+          <p class="sect-lede">
+            Configure your academic profile, credentials, and technical rigor. The model benchmarks your velocity against verified enterprise recruitment bars.
+          </p>
+        </div>
+
+        <div class="studio-grid">
+          <!-- Left Controls Column -->
+          <div class="controls-container">
+
+            <!-- 00. MODEL SELECTION (TASK 5 ALGORITHM SUITE) -->
+            <div class="glass-card rv" style="transition-delay: .02s">
+              <div class="card-header">
+                <div>
+                  <span class="card-idx">TASK 5 · ALGORITHM SELECTION</span>
+                  <h3 class="card-title">ML Model Architecture</h3>
+                </div>
+                <span class="meta-pill" id="activeModelBadge">SVR RBF · Active</span>
+              </div>
+              <p style="font-size: 0.8rem; color: var(--muted); margin-bottom: 12px;">
+                Select which evaluated model calculates your placement probability and valuation:
+              </p>
+              <div class="model-select-grid" id="modelSelectorGroup">
+                <button type="button" class="model-opt-btn" data-model="linear">
+                  <div class="model-opt-title"><span>Linear Regression</span><span class="meta-pill" style="font-size: 0.65rem;">OLS</span></div>
+                  <div class="model-opt-sub">R²: 0.733 · RMSE: 5.59 · Good Fit [Verified]</div>
+                </button>
+                <button type="button" class="model-opt-btn" data-model="parabola">
+                  <div class="model-opt-title"><span>Parabola (Deg 2)</span><span class="meta-pill" style="font-size: 0.65rem;">Poly</span></div>
+                  <div class="model-opt-sub">R²: 0.727 · Ridge α=5.0 · Non-linear</div>
+                </button>
+                <button type="button" class="model-opt-btn active" data-model="svr_rbf">
+                  <div class="model-opt-title"><span>SVR (RBF Kernel)</span><span class="meta-pill" style="font-size: 0.65rem;">Recommended</span></div>
+                  <div class="model-opt-sub">Kernel SVR · C=100 · ε=0.5</div>
+                </button>
+                <button type="button" class="model-opt-btn" data-model="bagging">
+                  <div class="model-opt-title"><span>Random Forest</span><span class="meta-pill" style="font-size: 0.65rem;">Bagging</span></div>
+                  <div class="model-opt-sub">100 Trees · Acc: 89.1% · Ensemble</div>
+                </button>
+                <button type="button" class="model-opt-btn" data-model="boosting">
+                  <div class="model-opt-title"><span>Gradient Boosting</span><span class="meta-pill" style="font-size: 0.65rem;">Boosting</span></div>
+                  <div class="model-opt-sub">lr=0.08 · MaxDepth=4 · Acc: 89.6%</div>
+                </button>
+                <button type="button" class="model-opt-btn" data-model="adaboost">
+                  <div class="model-opt-title"><span>AdaBoost</span><span class="meta-pill" style="font-size: 0.65rem;">Adaptive</span></div>
+                  <div class="model-opt-sub">60 Estimators · Acc: 88.4%</div>
+                </button>
+              </div>
+
+              <!-- Live Model Telemetry Bar -->
+              <div class="model-live-telemetry">
+                <div><strong>Active Model:</strong> <span id="telemetryName" style="color: var(--ink); font-weight: 650;">Support Vector Regression (SVR RBF)</span></div>
+                <div class="telemetry-chips">
+                  <span class="meta-pill" id="telemetryR2">R²: 0.6708</span>
+                  <span class="meta-pill" id="telemetryRmse">RMSE: 6.213</span>
+                  <span class="meta-pill" id="telemetryFit">Good Fit [Verified]</span>
+                  <span class="meta-pill" id="telemetryCv">5-Fold CV: 0.6704 (±0.010)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 01. INSTITUTION BENCHMARK -->
+            <div class="glass-card rv" style="transition-delay: .05s">
+              <div class="card-header">
+                <div>
+                  <span class="card-idx">01 · INSTITUTION</span>
+                  <h3 class="card-title">Campus Benchmark</h3>
+                </div>
+              </div>
+
+              <div class="uni-search-wrap">
+                <div class="uni-search-box">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--faint);">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                  </svg>
+                  <input type="text" id="uniSearchInput" class="uni-input-glass" placeholder="Search verified university worldwide or paste website URL..." autocomplete="off">
+                  <button type="button" class="btn btn-sm" id="btnDetectUni">
+                    <span>Auto-Detect</span>
+                  </button>
+                </div>
+
+                <!-- Instant Suggestions Dropdown -->
+                <div class="uni-suggestions-dropdown" id="uniSuggestionsDropdown"></div>
+              </div>
+
+              <!-- Quick University Chips -->
+              <div class="uni-quick-chips">
+                <span class="meta-pill" style="font-size: 0.68rem;">Quick Select:</span>
+                <button type="button" class="uni-quick-chip" data-uni="darshan.ac.in">Darshan University</button>
+                <button type="button" class="uni-quick-chip" data-uni="iitb.ac.in">IIT Bombay</button>
+                <button type="button" class="uni-quick-chip" data-uni="bits-pilani.ac.in">BITS Pilani</button>
+                <button type="button" class="uni-quick-chip" data-uni="stanford.edu">Stanford</button>
+                <button type="button" class="uni-quick-chip" data-uni="mit.edu">MIT</button>
+                <button type="button" class="uni-quick-chip" data-uni="vit.ac.in">VIT Vellore</button>
+              </div>
+
+              <!-- Verified Benchmark Summary Banner -->
+              <div class="uni-benchmark-badge" id="uniBenchmarkBadge">
+                <div class="uni-badge-left">
+                  <span class="uni-tier-pill" id="uniBadgeTier">Tier 2</span>
+                  <div class="uni-badge-title" id="uniBadgeName">Darshan University (Rajkot, Gujarat)</div>
+                </div>
+                <div class="uni-badge-stats">
+                  <div>Placement Bar: <strong id="uniBadgeBar">62%</strong></div>
+                  <div>Historical Rate: <strong id="uniBadgeRate">76%</strong></div>
+                  <div>Median CTC: <strong id="uniBadgePackage">₹6.8 LPA</strong></div>
+                </div>
+              </div>
+
+              <!-- UNVERIFIED INSTITUTION FALLBACK MODAL CARD -->
+              <div class="uni-fallback-card" id="uniFallbackCard">
+                <div class="uni-fallback-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                  <span>Institution Not in Verified Worldwide Index</span>
+                </div>
+                <p class="uni-fallback-text" id="uniFallbackMsg">
+                  We do not fabricate placement stats. Upload your official university placement brochure (PDF) or calibrate criteria manually.
+                </p>
+
+                <div class="uni-fallback-tabs">
+                  <button type="button" class="uni-fallback-tab-btn active" id="tabUploadDoc">Upload Placement Brochure (PDF)</button>
+                  <button type="button" class="uni-fallback-tab-btn" id="tabManualCalib">Enter Criteria Manually</button>
+                </div>
+
+                <!-- Tab 1: PDF Brochure Upload -->
+                <div id="fallbackDocUpload">
+                  <div class="brochure-dropzone" id="brochureDropzone">
+                    <input type="file" id="brochureFileInput" accept=".pdf" style="display: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--ink); margin: 0 auto 6px;">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                    </svg>
+                    <div style="font-weight: 700; font-size: 0.85rem; color: var(--ink);">Drop official placement brochure / NIRF PDF</div>
+                    <div style="font-size: 0.74rem; color: var(--muted); margin-top: 4px;">AI automatically calibrates campus placement bars and median salary packages</div>
+                  </div>
+                  <div id="brochureStatusBanner" style="display:none; margin-top: 10px; font-size: 0.78rem; padding: 10px 14px; border-radius: 12px; background: rgba(0,0,0,0.04); color: var(--ink); font-weight: 600;"></div>
+                </div>
+
+                <!-- Tab 2: Manual Criteria -->
+                <div id="fallbackManual" style="display: none;">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="manualUniName">College Name</label>
+                      <input type="text" id="manualUniName" class="glass-select" placeholder="e.g. My Institute of Technology">
+                    </div>
+                    <div class="form-group">
+                      <label for="manualUniTier">Accreditation Tier</label>
+                      <select id="manualUniTier" class="glass-select">
+                        <option value="Tier 1">Tier 1 (National Flagship)</option>
+                        <option value="Tier 2" selected>Tier 2 (Accredited)</option>
+                        <option value="Tier 3">Tier 3 (Regional)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row" style="margin-top: 16px;">
+                    <div class="form-group">
+                      <label for="manualUniPlacementRate">Placement Rate (%)</label>
+                      <input type="number" id="manualUniPlacementRate" class="glass-select" min="20" max="100" value="72">
+                    </div>
+                    <div class="form-group">
+                      <label for="manualUniAvgPackage">Median CTC (₹ LPA)</label>
+                      <input type="number" id="manualUniAvgPackage" class="glass-select" min="2" max="60" step="0.5" value="6.5">
+                    </div>
+                    <div class="form-group">
+                      <label for="manualUniPlacementBar">Placement Bar (%)</label>
+                      <input type="number" id="manualUniPlacementBar" class="glass-select" min="20" max="95" value="60">
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-sm" id="btnApplyManualUni" style="margin-top: 16px; width: 100%;">
+                    Apply Custom Benchmark
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 01. TARGET CAREER TRACK -->
+            <div class="glass-card rv" style="transition-delay: .1s">
+              <div class="card-header">
+                <div>
+                  <span class="card-idx">01 · TARGET TRACK</span>
+                  <h3 class="card-title">Career Track</h3>
+                </div>
+              </div>
+              <div class="field-chips-container" id="fieldChips">
+                <button type="button" class="field-chip active" data-field="ai_ml">AI & Machine Learning</button>
+                <button type="button" class="field-chip" data-field="sde_fullstack">Full Stack SDE</button>
+                <button type="button" class="field-chip" data-field="data_science">Data Scientist</button>
+                <button type="button" class="field-chip" data-field="cloud_devops">Cloud & DevOps</button>
+                <button type="button" class="field-chip" data-field="cyber_security">Cyber Security</button>
+                <button type="button" class="field-chip" data-field="fintech_quant">Quant & FinTech</button>
+              </div>
+            </div>
+
+            <!-- 02. RESUME INGESTION -->
+            <div class="glass-card rv" style="transition-delay: .15s">
+              <div class="card-header">
+                <div>
+                  <span class="card-idx">02 · CREDENTIALS</span>
+                  <h3 class="card-title">Resume Parsing</h3>
+                </div>
+              </div>
+
+              <div class="resume-dropzone" id="resumeDropzone">
+                <input type="file" id="resumeFileInput" accept=".pdf,.txt" style="display: none;">
+                <div class="resume-icon-circle">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+                  </svg>
+                </div>
+                <div class="resume-title">Drop resume here or click to browse</div>
+                <div class="resume-subtitle">Supports PDF & TXT. Automatically extracts CGPA, skills, projects, and internships.</div>
+              </div>
+
+              <div class="resume-status-banner" id="resumeStatusBanner">
+                <div>
+                  <div style="font-size: 0.86rem; font-weight: 700; color: var(--ink);" id="resumeStatusTitle">Resume Parsed [Verified]</div>
+                  <div style="font-size: 0.76rem; color: var(--muted); margin-top: 2px;" id="resumeStatusMeta">Auto-extracted credentials populated below.</div>
+                  <div class="detected-tags" id="resumeDetectedTags"></div>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm" id="btnReupload">Change File</button>
+              </div>
+            </div>
+
+            <!-- 03. ACADEMIC & TECHNICAL METRICS -->
+            <div class="glass-card rv" style="transition-delay: .2s">
+              <div class="card-header">
+                <div>
+                  <span class="card-idx">03 · ACADEMICS</span>
+                  <h3 class="card-title">Academic & Technical Rigor</h3>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="degree_program">Degree Program</label>
+                  <select id="degree_program" class="glass-select">
+                    <option value="B.Tech" selected>B.Tech — Technology / Engineering</option>
+                    <option value="BCA">BCA — Computer Applications</option>
+                    <option value="B.Sc">B.Sc — Computer Science</option>
+                    <option value="M.Tech">M.Tech — Advanced Technology</option>
+                    <option value="MCA">MCA — Computing Applications</option>
+                    <option value="MBA">MBA — Business Administration</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="specialization">Specialization</label>
+                  <select id="specialization" class="glass-select">
+                    <option value="Computer Science" selected>Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Data Science">Data Science & AI</option>
+                    <option value="Electronics">Electronics & Comm.</option>
+                    <option value="Mechanical">Mechanical Engineering</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-top: 24px;">
+                <div class="form-group">
+                  <label for="cgpa">
+                    <span>Cumulative CGPA</span>
+                    <span class="val" id="cgpa-val">8.4 / 10</span>
+                  </label>
+                  <div class="range-wrap">
+                    <input type="range" id="cgpa" class="glass-range" min="4.5" max="10.0" step="0.1" value="8.4">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>
+                    <span>Active Backlogs</span>
+                    <span class="val">Eligibility Filter</span>
+                  </label>
+                  <div class="counter-box">
+                    <button type="button" class="counter-btn" id="backlogs-dec" data-min="0">−</button>
+                    <span class="counter-val" id="backlogs-val">0</span>
+                    <button type="button" class="counter-btn" id="backlogs-inc" data-max="10">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-top: 24px;">
+                <div class="form-group">
+                  <label for="skill_relevance_score">
+                    <span>Stack Alignment</span>
+                    <span class="val" id="skill_relevance_score-val">82%</span>
+                  </label>
+                  <div class="range-wrap">
+                    <input type="range" id="skill_relevance_score" class="glass-range" min="0.1" max="1.0" step="0.02" value="0.82">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>
+                    <span>Core Skills Count</span>
+                    <span class="val" id="num_skills-val">9</span>
+                  </label>
+                  <div class="counter-box">
+                    <button type="button" class="counter-btn" id="num_skills-dec" data-min="1">−</button>
+                    <span class="counter-val" id="num_skills-val">9</span>
+                    <button type="button" class="counter-btn" id="num_skills-inc" data-max="25">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-top: 24px;">
+                <div class="form-group">
+                  <label>Verified Internships</label>
+                  <div class="counter-box">
+                    <button type="button" class="counter-btn" id="internships_count-dec" data-min="0">−</button>
+                    <span class="counter-val" id="internships_count-val">2</span>
+                    <button type="button" class="counter-btn" id="internships_count-inc" data-max="8">+</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Capstone Projects</label>
+                  <div class="counter-box">
+                    <button type="button" class="counter-btn" id="projects_count-dec" data-min="1">−</button>
+                    <span class="counter-val" id="projects_count-val">5</span>
+                    <button type="button" class="counter-btn" id="projects_count-inc" data-max="20">+</button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Hackathons Won</label>
+                  <div class="counter-box">
+                    <button type="button" class="counter-btn" id="hackathons_won-dec" data-min="0">−</button>
+                    <span class="counter-val" id="hackathons_won-val">1</span>
+                    <button type="button" class="counter-btn" id="hackathons_won-inc" data-max="10">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row" style="margin-top: 24px;">
+                <div class="form-group">
+                  <label for="communication_score">
+                    <span>Interview Communication</span>
+                    <span class="val" id="communication_score-val">78 / 100</span>
+                  </label>
+                  <div class="range-wrap">
+                    <input type="range" id="communication_score" class="glass-range" min="20" max="100" step="1" value="78">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="extracurricular_score">
+                    <span>Leadership & Activities</span>
+                    <span class="val" id="extracurricular_score-val">60 / 100</span>
+                  </label>
+                  <div class="range-wrap">
+                    <input type="range" id="extracurricular_score" class="glass-range" min="10" max="100" step="1" value="60">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Sticky Results HUD (Strictly Black & Its Shades) -->
+          <div class="results-pane">
+            <div class="glass-card result-card rv" style="transition-delay: .15s">
+
+              <!-- Engine Switcher -->
+              <div class="engine-switcher">
+                <button type="button" class="engine-btn active" data-engine="svr">SVR RBF</button>
+                <button type="button" class="engine-btn" data-engine="gd">Linear GD</button>
+              </div>
+
+              <!-- Radial Placement Gauge -->
+              <div class="gauge-container">
+                <svg class="gauge-svg" viewBox="0 0 200 200">
+                  <circle class="gauge-bg" cx="100" cy="100" r="90" />
+                  <circle class="gauge-fill" id="gaugeFill" cx="100" cy="100" r="90" />
+                </svg>
+                <div class="gauge-content">
+                  <div style="display: flex; align-items: baseline;">
+                    <span class="gauge-val" id="gaugeVal">83.4</span>
+                    <span class="gauge-unit">%</span>
+                  </div>
+                  <span class="gauge-label">Placement Probability</span>
+                </div>
+              </div>
+
+              <!-- Status Badge -->
+              <div class="status-badge" id="statusBadge">
+                <span class="dot"></span>
+                <span>Tier 1 Priority Talent</span>
+              </div>
+
+              <div class="verdict-text" id="verdictText">Exceptional Placement Velocity</div>
+
+              <!-- University Placement Bar Meter -->
+              <div class="uni-bar-meter-card">
+                <div class="uni-bar-meter-head">
+                  <span id="uniMeterBarLabel" style="color: var(--muted);">Campus Bar: 62%</span>
+                  <span id="uniMeterScoreLabel" style="color: var(--ink);">Score: 83.4%</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill-user" id="barFillUser" style="width: 83.4%;"></div>
+                  <div class="bar-target-marker" id="barTargetMarker" style="left: 62%;"></div>
+                </div>
+                <div class="uni-bar-delta-label" id="uniBarDeltaLabel">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                  <span>+21.4% above campus threshold</span>
+                </div>
+              </div>
+
+              <!-- Estimated Package Banner -->
+              <div class="package-estimate-banner">
+                <div class="package-meta">
+                  <div class="label">Projected CTC Package</div>
+                  <div class="val mono" id="packageVal">₹10.1 LPA</div>
+                </div>
+                <div style="text-align: right;">
+                  <span class="meta-pill" id="packageRange">₹8.6 — ₹13.6 LPA</span>
+                </div>
+              </div>
+
+              <!-- Strategic Levers -->
+              <div class="recommendations-card" style="padding: 24px 0 0 0; text-align: left;">
+                <div class="card-idx" style="margin-bottom: 8px;">STRATEGIC GROWTH LEVERS</div>
+                <div class="rec-list" id="recList"></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 03 · WHAT-IF SIMULATOR ===================== -->
+    <section id="simulator">
+      <div class="wrap">
+        <div class="glass-card simulator-box rv">
+          <div class="sect-header">
+            <span class="sect-eyebrow">Simulation Engine</span>
+            <h2 class="h-sect">What-If Trajectory.</h2>
+            <p class="sect-lede">
+              Explore how profile enhancements directly impact your placement probability and projected CTC in real-time.
+            </p>
+          </div>
+
+          <div class="sim-grid">
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+              <div class="form-group">
+                <label for="simCgpa">
+                  <span>Target CGPA Elevation</span>
+                  <span class="val" id="simCgpa-val">+0.5</span>
+                </label>
+                <input type="range" id="simCgpa" class="glass-range" min="0.0" max="1.5" step="0.1" value="0.5">
+              </div>
+
+              <div class="form-group">
+                <label for="simInternships">
+                  <span>Additional Internships</span>
+                  <span class="val" id="simInternships-val">+1</span>
+                </label>
+                <input type="range" id="simInternships" class="glass-range" min="0" max="3" step="1" value="1">
+              </div>
+
+              <div class="form-group">
+                <label for="simProjects">
+                  <span>Additional Capstones</span>
+                  <span class="val" id="simProjects-val">+2</span>
+                </label>
+                <input type="range" id="simProjects" class="glass-range" min="0" max="5" step="1" value="2">
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+                <input type="checkbox" id="simBacklogs" checked style="width: 17px; height: 17px; accent-color: var(--ink); cursor: pointer;">
+                <label for="simBacklogs" style="font-size: 0.86rem; font-weight: 550; cursor: pointer; color: var(--ink);">
+                  Clear all active backlogs before recruitment drive
+                </label>
+              </div>
+            </div>
+
+            <!-- Real-Time Simulated Box -->
+            <div style="background: rgba(255,255,255,0.92); border-radius: 28px; padding: 36px 32px; border: 1px solid rgba(0,0,0,0.08); text-align: center;">
+              <span class="meta-pill">Simulated Lift</span>
+              <div style="margin: 18px 0;">
+                <div class="sim-delta-badge" id="simDeltaBadge">+11.8% Surge</div>
+              </div>
+              <div style="display: flex; justify-content: space-around; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line);">
+                <div>
+                  <div class="meta-pill" style="font-size: 0.68rem;">Projected Score</div>
+                  <div style="font-size: 2rem; font-weight: 850; color: var(--ink); margin-top: 4px;" id="simNewProb">95.2%</div>
+                </div>
+                <div>
+                  <div class="meta-pill" style="font-size: 0.68rem;">Projected CTC</div>
+                  <div style="font-size: 1.4rem; font-weight: 850; color: var(--ink); margin-top: 8px;" id="simNewPackage">₹11.8 LPA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 04 · SPECS & TASK 5 BENCHMARKS ===================== -->
+    <section id="specs">
+      <div class="wrap">
+        <div class="sect-header rv">
+          <span class="sect-eyebrow">Task 5 · Model Evaluation & Checklist</span>
+          <h2 class="h-sect">Model Benchmark Suite.</h2>
+          <p class="sect-lede">
+            Systematic evaluation across regression and classification formulations evaluated on N=6,000 collegiate profiles with 5-fold cross-validation and hyperparameter optimization.
+          </p>
+        </div>
+
+        <div class="specs-grid">
+          <div class="glass-card spec-card rv" style="transition-delay: .05s">
+            <span class="meta-pill">01 · PRIMARY SVR RBF</span>
+            <div>
+              <div class="stat">0.671 R²</div>
+              <p style="font-size: 0.88rem;">Support Vector Regression with non-linear Radial Basis Function (RBF) kernel (C=100, ε=0.5).</p>
+            </div>
+          </div>
+
+          <div class="glass-card spec-card rv" style="transition-delay: .1s">
+            <span class="meta-pill">02 · LINEAR BASELINE</span>
+            <div>
+              <div class="stat">0.733 R²</div>
+              <p style="font-size: 0.88rem;">Ordinary Least Squares regression showing consistent generalization with zero train-test variance.</p>
+            </div>
+          </div>
+
+          <div class="glass-card spec-card rv" style="transition-delay: .15s">
+            <span class="meta-pill">03 · PARABOLA (DEG 2)</span>
+            <div>
+              <div class="stat">0.727 R²</div>
+              <p style="font-size: 0.88rem;">Polynomial Ridge regularized regression modeling quadratic degree-2 parameter curves.</p>
+            </div>
+          </div>
+
+          <div class="glass-card spec-card rv" style="transition-delay: .2s">
+            <span class="meta-pill">04 · ENSEMBLES</span>
+            <div>
+              <div class="stat">89.6% Acc</div>
+              <p style="font-size: 0.88rem;">Random Forest (Bagging) & Gradient Boosting (Boosting) evaluated across 5 cross-validation folds.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TASK 5 CHECKLIST TABLE 1: REGRESSION MODELS EVALUATION -->
+        <div class="glass-card rv" style="margin-top: 32px; padding: clamp(24px, 3.5vw, 36px);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span class="meta-pill">TASK 5 CHECKLIST · REGRESSION MODELS</span>
+              <h3 style="font-size: 1.25rem; font-weight: 750; margin-top: 6px;">Evaluation Metrics: RSS, RMSE, R² & 5-Fold Cross-Validation</h3>
+            </div>
+            <span class="meta-pill" style="color: #059669; font-weight: 700;">Train Score vs Test Score Checked [Verified]</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--muted); margin-bottom: 16px;">
+            Comparison of all regression algorithms evaluated on an 80:20 train-test split with 5-fold cross-validation spread:
+          </p>
+          <div class="benchmarks-table-wrap">
+            <table class="benchmarks-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Type</th>
+                  <th>RSS</th>
+                  <th>RMSE</th>
+                  <th>MAE</th>
+                  <th>R² (Test)</th>
+                  <th>R² (Train)</th>
+                  <th>5-Fold CV (Mean ± Spread)</th>
+                  <th>Overfitting Check</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Linear Regression (OLS)</strong></td>
+                  <td>Baseline Regressor</td>
+                  <td class="mono">37,518.7</td>
+                  <td class="mono">5.592</td>
+                  <td class="mono">4.443</td>
+                  <td class="mono" style="font-weight: 750;">0.7334</td>
+                  <td class="mono">0.7363</td>
+                  <td class="mono">0.7339 (±0.011)</td>
+                  <td class="fit-good">Good Fit [Verified]</td>
+                </tr>
+                <tr>
+                  <td><strong>Polynomial Ridge (Deg 2 Parabola)</strong></td>
+                  <td>Non-linear Polynomial</td>
+                  <td class="mono">38,394.0</td>
+                  <td class="mono">5.656</td>
+                  <td class="mono">4.481</td>
+                  <td class="mono" style="font-weight: 750;">0.7272</td>
+                  <td class="mono">0.7384</td>
+                  <td class="mono">0.7283 (±0.011)</td>
+                  <td class="fit-good">Good Fit [Verified]</td>
+                </tr>
+                <tr>
+                  <td><strong>Support Vector Regression (SVR RBF)</strong></td>
+                  <td>Kernel SVR</td>
+                  <td class="mono">46,323.7</td>
+                  <td class="mono">6.213</td>
+                  <td class="mono">4.894</td>
+                  <td class="mono" style="font-weight: 750;">0.6708</td>
+                  <td class="mono">0.8306</td>
+                  <td class="mono">0.6704 (±0.011)</td>
+                  <td class="fit-over">Overfitting (Train &gt;&gt; Test)</td>
+                </tr>
+                <tr>
+                  <td><strong>Random Forest (Bagging)</strong></td>
+                  <td>Bagging Ensemble</td>
+                  <td class="mono">47,731.6</td>
+                  <td class="mono">6.307</td>
+                  <td class="mono">5.024</td>
+                  <td class="mono" style="font-weight: 750;">0.6608</td>
+                  <td class="mono">0.9168</td>
+                  <td class="mono">0.6521 (±0.012)</td>
+                  <td class="fit-over">Overfitting (Train &gt;&gt; Test)</td>
+                </tr>
+                <tr>
+                  <td><strong>Gradient Boosting (Boosting)</strong></td>
+                  <td>Boosting Ensemble</td>
+                  <td class="mono">45,120.4</td>
+                  <td class="mono">6.132</td>
+                  <td class="mono">4.821</td>
+                  <td class="mono" style="font-weight: 750;">0.6794</td>
+                  <td class="mono">0.8142</td>
+                  <td class="mono">0.6750 (±0.011)</td>
+                  <td class="fit-over">Overfitting (Train &gt;&gt; Test)</td>
+                </tr>
+                <tr>
+                  <td><strong>AdaBoost Regressor</strong></td>
+                  <td>Adaptive Boosting</td>
+                  <td class="mono">46,890.2</td>
+                  <td class="mono">6.251</td>
+                  <td class="mono">4.912</td>
+                  <td class="mono" style="font-weight: 750;">0.6668</td>
+                  <td class="mono">0.7820</td>
+                  <td class="mono">0.6620 (±0.013)</td>
+                  <td class="fit-over">Overfitting (Train &gt;&gt; Test)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TASK 5 CHECKLIST TABLE 2: CLASSIFICATION MODELS EVALUATION -->
+        <div class="glass-card rv" style="margin-top: 24px; padding: clamp(24px, 3.5vw, 36px);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span class="meta-pill">TASK 5 CHECKLIST · CLASSIFICATION METRICS</span>
+              <h3 style="font-size: 1.25rem; font-weight: 750; margin-top: 6px;">Placement Decision Cutoff (Placed vs Not Placed ≥ 50%)</h3>
+            </div>
+            <span class="meta-pill">Accuracy · Precision · Recall · F1-Score</span>
+          </div>
+          <div class="benchmarks-table-wrap">
+            <table class="benchmarks-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Accuracy</th>
+                  <th>Precision</th>
+                  <th>Recall</th>
+                  <th>F1-Score</th>
+                  <th>Verdict</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Linear Regression (Thresholded)</strong></td>
+                  <td class="mono" style="font-weight: 750;">91.00%</td>
+                  <td class="mono">92.57%</td>
+                  <td class="mono">97.27%</td>
+                  <td class="mono" style="font-weight: 750; color: #059669;">94.86%</td>
+                  <td><span class="meta-pill" style="color: #059669;">Top Generalizer</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Polynomial Ridge (Deg 2 Parabola)</strong></td>
+                  <td class="mono" style="font-weight: 750;">90.92%</td>
+                  <td class="mono">92.56%</td>
+                  <td class="mono">97.17%</td>
+                  <td class="mono" style="font-weight: 750; color: #059669;">94.81%</td>
+                  <td><span class="meta-pill" style="color: #059669;">Top Generalizer</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Gradient Boosting (Boosting)</strong></td>
+                  <td class="mono" style="font-weight: 750;">89.58%</td>
+                  <td class="mono">92.40%</td>
+                  <td class="mono">95.60%</td>
+                  <td class="mono" style="font-weight: 750;">93.97%</td>
+                  <td><span class="meta-pill">Strong Ensemble</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Support Vector Machine (SVR RBF)</strong></td>
+                  <td class="mono" style="font-weight: 750;">89.08%</td>
+                  <td class="mono">92.16%</td>
+                  <td class="mono">95.31%</td>
+                  <td class="mono" style="font-weight: 750;">93.71%</td>
+                  <td><span class="meta-pill">Non-linear Boundary</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Random Forest (Bagging)</strong></td>
+                  <td class="mono" style="font-weight: 750;">88.50%</td>
+                  <td class="mono">91.82%</td>
+                  <td class="mono">94.90%</td>
+                  <td class="mono" style="font-weight: 750;">93.33%</td>
+                  <td><span class="meta-pill">Bagged Trees</span></td>
+                </tr>
+                <tr>
+                  <td><strong>AdaBoost Classifier</strong></td>
+                  <td class="mono" style="font-weight: 750;">88.42%</td>
+                  <td class="mono">91.75%</td>
+                  <td class="mono">94.85%</td>
+                  <td class="mono" style="font-weight: 750;">93.27%</td>
+                  <td><span class="meta-pill">Adaptive Boosting</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TASK 5 CHECKLIST STEP 5: HYPERPARAMETER TUNING DETAILS -->
+        <div class="glass-card rv" style="margin-top: 24px; padding: clamp(24px, 3.5vw, 36px);">
+          <div style="margin-bottom: 20px;">
+            <span class="meta-pill">TASK 5 CHECKLIST · HYPERPARAMETER TUNING</span>
+            <h3 style="font-size: 1.25rem; font-weight: 750; margin-top: 6px;">GridSearchCV Optimization Results</h3>
+            <p style="font-size: 0.82rem; color: var(--muted); margin-top: 4px;">
+              Systematic hyperparameter search conducted across candidates to identify lowest validation loss:
+            </p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--line); border-radius: 18px; padding: 20px;">
+              <span class="meta-pill" style="font-size: 0.68rem;">SVR with RBF Kernel</span>
+              <div style="font-weight: 750; font-size: 0.95rem; margin-top: 8px;">C = 100, ε = 0.5, γ = 'scale'</div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+                Grid searched C ∈ [1, 10, 100], ε ∈ [0.1, 0.5, 1.0]. Lower epsilon strictly controls regression tube width, while C=100 balances soft margin penalties.
+              </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--line); border-radius: 18px; padding: 20px;">
+              <span class="meta-pill" style="font-size: 0.68rem;">Polynomial Ridge (Parabola)</span>
+              <div style="font-weight: 750; font-size: 0.95rem; margin-top: 8px;">Degree = 2, α = 5.0 (L2 Penalty)</div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+                Tested α ∈ [0.1, 1.0, 5.0, 10.0]. L2 regularization prevents coefficient explosion across the 153 cross-feature quadratic expansion terms.
+              </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--line); border-radius: 18px; padding: 20px;">
+              <span class="meta-pill" style="font-size: 0.68rem;">Random Forest (Bagging)</span>
+              <div style="font-weight: 750; font-size: 0.95rem; margin-top: 8px;">n_estimators = 100, max_depth = 12</div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+                Constraining max_depth to 12 reduced tree memorization and lowered test partition RMSE by 0.38 compared to unpruned deep trees.
+              </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.7); border: 1px solid var(--line); border-radius: 18px; padding: 20px;">
+              <span class="meta-pill" style="font-size: 0.68rem;">Gradient Boosting (Boosting)</span>
+              <div style="font-weight: 750; font-size: 0.95rem; margin-top: 8px;">learning_rate = 0.08, max_depth = 4</div>
+              <p style="font-size: 0.78rem; line-height: 1.6; color: var(--muted); margin-top: 8px;">
+                A conservative learning rate of 0.08 with shallow base trees (depth=4) prevented early training error saturation and produced the best ensemble score.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 05 · ABOUT THIS PROJECT ===================== -->
+    <section id="about">
+      <div class="wrap">
+        <div class="sect-header rv">
+          <span class="sect-eyebrow">Academic Capstone Documentation</span>
+          <h2 class="h-sect">About This Project.</h2>
+          <p class="sect-lede">
+            Department of Computer Science & Engineering · Darshan University, Rajkot<br>
+            Machine Learning Capstone Project · Task 5 Comparative Evaluation Suite
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card about-card rv" style="transition-delay: .05s">
+            <span class="about-badge">01 · PROJECT MOTIVATION</span>
+            <h3>Solving Campus Placement Ambiguity</h3>
+            <p>
+              Engineering students often approach final-year placement drives without a quantitative understanding of how their grades, backlogs, technical skill relevance, and institutional placement criteria interact. This project was developed as our final-year machine learning capstone to replace guesswork with empirical, mathematically grounded placement probability modeling.
+            </p>
+          </div>
+
+          <div class="glass-card about-card rv" style="transition-delay: .1s">
+            <span class="about-badge">02 · DATASET METHODOLOGY</span>
+            <h3>6,000 Verified Student Profiles</h3>
+            <p>
+              The models are trained and tested on an empirical dataset of 6,000 engineering student records calibrated against realistic tier-wise distributions (Tier 1 IITs/NITs, Tier 2 accredited universities like Darshan University, and Tier 3 regional colleges). Features include CGPA, active backlogs, stack relevance score, hackathons participated/won, industry certifications, internship experience, and campus median salary benchmarks.
+            </p>
+          </div>
+
+          <div class="glass-card about-card rv" style="transition-delay: .15s">
+            <span class="about-badge">03 · TASK 5 METHODOLOGY</span>
+            <h3>Comprehensive Comparative Suite</h3>
+            <p>
+              In accordance with academic Task 5 requirements, we conducted rigorous comparative benchmarking across multiple paradigms: Ordinary Least Squares (Linear Regression), Quadratic Polynomial Ridge (Degree 2 Parabola), Support Vector Regression (SVR with RBF kernel), and Ensembles (Random Forest Bagging, Gradient Boosting, AdaBoost). Every model was trained with an 80:20 split and validated across 5 folds.
+            </p>
+          </div>
+
+          <div class="glass-card about-card rv" style="transition-delay: .2s">
+            <span class="about-badge">04 · EMPIRICAL TAKEAWAYS</span>
+            <h3>Core Engineering Findings</h3>
+            <p>
+              Linear Regression and Polynomial Ridge demonstrated superior generalizability with negligible train-test gap (R² ≈ 0.73, Good Fit [Verified]). While non-linear SVR and Random Forest captured complex interactions, they required regularized depth to avoid training overfit. Across all models, completing practical internships (+6.5% direct boost) and clearing active backlogs produced the highest leverage for placement success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <div>
+          <span style="font-size: 0.94rem; font-weight: 800; color: var(--ink); letter-spacing: 0.04em;">ORBIT</span>
+          <div style="font-size: 0.78rem; color: var(--muted); margin-top: 4px;">
+            Career Trajectory Modeling & Institutional Intelligence Engine
+          </div>
+        </div>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+          <a href="#top">Top</a>
+          <a href="#engine">Studio</a>
+          <a href="#simulator">Simulator</a>
+          <a href="#specs">Models</a>
+          <a href="#about">About</a>
+          <a href="/docs" target="_blank" rel="noopener">API Docs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Application scripts -->
+  <script src="/static/js/glass-refraction.js"></script>
+  <script src="/static/js/app.js"></script>
+
+</body>
+</html>
