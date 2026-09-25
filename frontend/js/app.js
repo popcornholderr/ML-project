@@ -8,6 +8,8 @@
 (function() {
   "use strict";
 
+  const API_BASE_URL = "https://ml-project-73lm.onrender.com";
+
   // Application State
   const state = {
     profile: {
